@@ -1,0 +1,23 @@
+{
+  "name": "moveo-assigment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/js"
+  },
+  "author": "Nir",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "hbs": "^4.0.6",
+    "nightmare": "^3.0.2",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "url-parse": "^1.4.7"
+  },
+  "devDependencies": {}
+}
