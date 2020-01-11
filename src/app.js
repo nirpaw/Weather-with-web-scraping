@@ -26,7 +26,10 @@ app.get('', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
-  location = 'sss';
+  console.log('ss');
+
+  location = req.query.location;
+  console.log('location: ' + location);
   forecast(location, (error, forecastData) => {
     if (error) {
       return res.send({ error });
@@ -35,6 +38,7 @@ app.get('/weather', (req, res) => {
       forecast: forecastData,
       location: location
     });
+    console.log('done!');
   });
 });
 
