@@ -17,16 +17,13 @@ const viewsPath = path.join(__dirname, '../templates');
 app.set('view engine', 'hbs');
 app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
-
-//Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
 
-app.get('', (req, res) => {
-  res.render('index');
-});
-
+// @route   GET /weather
+// @desc    Create a post
+// @acces   Public
 app.get('/weather', (req, res) => {
-  console.log('ss');
+  console.log('GET /weather');
 
   location = req.query.location;
   console.log('location: ' + location);
@@ -40,6 +37,10 @@ app.get('/weather', (req, res) => {
     });
     console.log('done!');
   });
+});
+
+app.get('', (req, res) => {
+  res.render('index', { title: 'Weather' });
 });
 
 app.listen(port, () => {

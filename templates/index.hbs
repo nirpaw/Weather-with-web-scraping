@@ -3,36 +3,76 @@
 
 <head>
     <title>Weather</title>
-    <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-    <div class="main-content1">
+    <div class="main-content">
         {{>header}}
-        <p>Use this site to get your weather</p>
+        <p>Enter the location name accurately</p>
 
-        <form>
-            <input placeholder="Location">
-            <button>Search</button>
+        <form id="form1">
+            <input placeholder="Location" id="input1">
+            <button id="btn1">Search</button>
         </form>
-        <p id="msg1"></p>
-        <p id="msg2"></p>
-    </div>
-    <div class="main-content2">
-        {{>header}}
-        <p>Use this site to get your weather</p>
+        <img id="loading1" src="https://www.drupal.org/files/issues/throbber_13.gif" style="display: none">
 
-        <form>
-            <input placeholder="Location">
-            <button>Search</button>
+        <p id="location1"></p>
+
+        <img class="icon" id="icon1">
+
+        <table>
+            <tr>
+                <td>Temrature</td>
+                <td>Humidity</td>
+                <td>Windspeed</td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="temprature1"></p>
+                </td>
+                <td>
+                    <p id="humidity1"></p>
+                </td>
+                <td>
+                    <p id="windspeed1"></p>
+                </td>
+            </tr>
+        </table>
+        <form id="form2">
+            <input placeholder="Location" id="input2">
+            <button id="btn2">Search</button>
         </form>
-        <p id="msg1"></p>
-        <p id="msg2"></p>
+        <img id="loading2" src="https://www.drupal.org/files/issues/throbber_13.gif" style="display: none">
+
+        <p id="location2"></p>
+
+        <img class="icon" id="icon2">
+
+        <table>
+            <tr>
+                <td>Temrature</td>
+                <td>Humidity</td>
+                <td>Windspeed</td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="temprature2"></p>
+                </td>
+                <td>
+                    <p id="humidity2"></p>
+                </td>
+                <td>
+                    <p id="windspeed2"></p>
+                </td>
+            </tr>
+        </table>
+
     </div>
 
     {{>footer}}
     <script src="js/app.js"></script>
+
 
 </body>
 

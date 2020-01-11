@@ -4,8 +4,7 @@ const Nightmare = require('nightmare');
 const nightmare = Nightmare({ show: false });
 
 const forecast = (address, callback) => {
-  console.log('ss2');
-
+  console.log('forecast.js');
   nightmare
     .goto('https://darksky.net/forecast/32.0809,34.7806/si12/en')
     // Clear the search form
@@ -20,9 +19,8 @@ const forecast = (address, callback) => {
     .wait(3000)
     .url()
     .then(url => {
-      console.log('ss3');
+      console.log('url: ', url);
 
-      console.log(url);
       request(url, (error, response, html) => {
         if (error || response.statusCode !== 200) {
           callback('Unable to connect to weather services ', undefined);
@@ -49,8 +47,8 @@ const forecast = (address, callback) => {
             'div.humidity > span.val.swap > span.num.swip.humidity__value'
           ).text();
 
-          // const cityName = $('searchForm > input');
-          // console.log('cityName ' + cityName);
+          const cityName = $('searchForm > input[type=text]').val();
+          // console.log(cityName + ' is the cityName');
 
           const result = {
             temprature: temprature,
@@ -58,6 +56,7 @@ const forecast = (address, callback) => {
             wind: wind,
             humidity: humidity
           };
+
           callback(undefined, result);
 
           console.log(' ---- FOR DEBUG ----');
@@ -69,6 +68,7 @@ const forecast = (address, callback) => {
         }
       });
     });
+  // .end();
 };
 
 module.exports = forecast;
