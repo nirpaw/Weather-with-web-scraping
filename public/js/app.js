@@ -40,6 +40,7 @@ const searchOne = e => {
         windspeed1.textContent = data.forecast.wind + 'm/s';
         btn1.disabled = false;
         btn2.disabled = false;
+        setTimeout(() => btn1.click(), 10000);
       }
     });
   });
@@ -69,6 +70,7 @@ const searchTwo = e => {
         windspeed2.textContent = data.forecast.wind + 'm/s';
         btn1.disabled = false;
         btn2.disabled = false;
+        setTimeout(() => btn2.click(), 10000);
       }
     });
   });
@@ -76,9 +78,3 @@ const searchTwo = e => {
 
 weatherForm1.addEventListener('submit', searchOne);
 weatherForm2.addEventListener('submit', searchTwo);
-
-window.setTimeout(() => {
-  searchOne();
-  searchTwo();
-  alert('Update');
-}, 4000);
